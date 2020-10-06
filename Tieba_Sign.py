@@ -4,11 +4,8 @@ from requests import Session
 from time import sleep
 from random import randint
 
-try:
-    tbs = os.environ["tbs"]
-    cookie = os.environ["cookie"]
-except:
-    print("数据不完整，请继续添加数据")
+tbs = os.environ["tbs"]
+cookie = os.environ["cookie"]
     
 sleep(randint(0, 10))
 # 数据
