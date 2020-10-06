@@ -3,6 +3,7 @@
 from requests import Session
 from time import sleep
 from random import randint
+import os
 
 tbs = os.environ["tbs"]
 cookie = os.environ["cookie"]
