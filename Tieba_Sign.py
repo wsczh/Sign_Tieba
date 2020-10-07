@@ -1,6 +1,7 @@
 # -*- coding: utf8 -*-
 
 from requests import Session
+import requests
 from time import sleep
 import os
 from random import randint
