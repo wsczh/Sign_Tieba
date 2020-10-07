@@ -4,6 +4,13 @@ from requests import Session
 from time import sleep
 from random import randint
 
+
+try:    
+    key = os.environ["sckey"]
+    print(key)
+except:
+    print("key 缺失")
+
 try:
     tbs = os.environ["tbs"]
     print(tbs)
@@ -12,10 +19,6 @@ try:
 except:
     print("数据不完整，请继续添加数据")
     
-try:    
-    key = os.environ["sckey"]
-except:
-    print("数据不完整，请继续添加数据")
 
 sleep(randint(0, 10))
 # 数据
