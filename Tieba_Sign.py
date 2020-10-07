@@ -6,7 +6,9 @@ from random import randint
 
 try:
     tbs = os.environ["tbs"]
+    print(tbs)
     cookie = os.environ["cookie"]
+    print(cookie)
 except:
     print("数据不完整，请继续添加数据")
     
