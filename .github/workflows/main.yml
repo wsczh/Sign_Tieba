@@ -25,8 +25,8 @@ jobs:
         python -m pip install --upgrade pip
     - name: 'Sign In'
       env:
-        tbs: ${{ secrets.TBS }}
-        cookie : ${{ secrets.COOKIE }}
+        tbs: ${{ secrets.tbs }}
+        cookie : ${{ secrets.cookie }}
         SCKEY: ${{ secrets.SCKEY }} 
       run: |
         python Tieba_Sign.py
