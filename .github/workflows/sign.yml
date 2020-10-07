@@ -1,0 +1,30 @@
+name: sign
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the main branch
+on:
+  push:
+  schedule:
+    - cron: '0 1 * * *'
+      
+jobs:
+  sign_in:
+    runs-on: ubuntu-latest
+    steps:
+    - name: 'Checkout codes'
+      uses: actions/checkout@v2
+    - name: 'Set python'
+      uses: actions/setup-python@v1
+      with:
+        python-version: '3.x'
+    - name: 'Install dependencies'
+      run: |
+        python -m pip install --upgrade requests
+        python -m pip install --upgrade pip
+    - name: 'Sign In'
+      env:
+        tbs: ${{ secrets.TBS }}
+        cookie : ${{ secrets.COOKIE }}
+        sckey: ${{ secrets.SCKEY }} 
+      run: |
+        python Tieba_Sign.py
