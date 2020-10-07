@@ -6,17 +6,6 @@ from random import randint
 
 
 
-def get_data():
-    try:
-        tbs = os.environ["tbs"]
-        cookie = os.environ["cookie"]
-        key = os.environ["SCKEY"]
-    except:
-        print("数据不完整，请继续添加数据")
-    return tbs,cookie,key
-
-
-
 def notification(text, key):
     # Server酱推送信息
     api = 'https://sc.ftqq.com/' + key + '.send'
@@ -28,7 +17,14 @@ def notification(text, key):
     print("推送成功，假如没有收到推送，请检查key是否正确")
 
 
-def sign(tbs, cookie, key, notify = False):
+def sign(notify = False):
+    try:
+        tbs = os.environ["tbs"]
+        cookie = os.environ["cookie"]
+        key = os.environ["SCKEY"]
+    except:
+        print("数据不完整，请继续添加数据")
+        
     sleep(randint(0, 10))
     # 数据
     like_url = 'https://tieba.baidu.com/mo/q/newmoindex?'
@@ -93,5 +89,4 @@ def sign(tbs, cookie, key, notify = False):
     # print(f'''共{l}个吧，其中: {succees}个吧签到成功，{len(failed_bar)}个吧签到失败，{already_signed}个吧已经签到。{failed}''')
 
 if __name__ == '__main__':
-    tbs, cookie, key = get_data()
-    sign(tbs, cookie, key, True)
+    sign(True)
