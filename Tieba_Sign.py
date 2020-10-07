@@ -4,24 +4,14 @@ from requests import Session
 from time import sleep
 from random import randint
 
-
-
-def notification(text, key):
-    # Server酱推送信息
-    api = 'https://sc.ftqq.com/' + key + '.send'
-    data = {
-        "text": "签到完成",
-        "desp": text
-    }
-    req = requests.post(api, data=data)
-    print("推送成功，假如没有收到推送，请检查key是否正确")
-
-
-
 try:
     tbs = os.environ["tbs"]
     cookie = os.environ["cookie"]
-    key = os.environ["SCKEY"]
+except:
+    print("数据不完整，请继续添加数据")
+    
+try:    
+    key = os.environ["sckey"]
 except:
     print("数据不完整，请继续添加数据")
 
