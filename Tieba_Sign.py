@@ -4,7 +4,7 @@ from requests import Session
 from time import sleep
 from random import randint
 
-
+print("SS")
 try:    
     key = os.environ["sckey"]
     print(key)
