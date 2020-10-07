@@ -27,6 +27,6 @@ jobs:
       env:
         tbs: ${{ secrets.tbs }}
         cookie : ${{ secrets.cookie }}
-        SCKEY: ${{ secrets.SCKEY }} 
+        sckey: ${{ secrets.SCKEY }} 
       run: |
         python Tieba_Sign.py
