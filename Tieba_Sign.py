@@ -2,6 +2,7 @@
 
 from requests import Session
 from time import sleep
+import os
 from random import randint
 
 print("DD")
