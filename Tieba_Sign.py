@@ -79,7 +79,7 @@ while n < len(bars):
     n += 1
 l = len(bars)
 failed = "\n失败列表："+'\n'.join(failed_bar) if len(failed_bar) else ''
-text = "共{}个吧，其中: {}个吧签到成功，{}个吧签到失败，{}个吧已经签到。{}".format(l, success, len(failed_bar), already_signed, failed)
+text = "共{}个吧，其中: {}个吧签到成功，{}个吧签到失败，{}个吧已经签到。{}".format(l, succees, len(failed_bar), already_signed, failed)
 print(text)
 
 # Server酱推送信息
