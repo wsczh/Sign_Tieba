@@ -17,7 +17,7 @@ try:
     cookie = os.environ["cookie"]
     print(cookie)
 except:
-    print("数据不完整，请继续添加数据")
+    print("数据不完整")
     
 
 sleep(randint(0, 10))
