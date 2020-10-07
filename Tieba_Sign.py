@@ -6,18 +6,15 @@ import os
 from random import randint
 
 print("开始....")
-print(os.environ)
+# print(os.environ)
 try:    
     key = os.environ["sckey"]
-    print(key)
 except:
     print("key 缺失")
 
 try:
     tbs = os.environ["tbs"]
-    print(tbs)
     cookie = os.environ["cookie"]
-    print(cookie)
 except:
     print("数据不完整")
     
@@ -82,7 +79,7 @@ while n < len(bars):
     n += 1
 l = len(bars)
 failed = "\n失败列表："+'\n'.join(failed_bar) if len(failed_bar) else ''
-text = f'''共{l}个吧，其中: {succees}个吧签到成功，{len(failed_bar)}个吧签到失败，{already_signed}个吧已经签到。{failed}'''
+text = "共{}个吧，其中: {}个吧签到成功，{}个吧签到失败，{}个吧已经签到。{}".format(l, success, len(failed_bar), already_signed, failed)
 print(text)
 
 # Server酱推送信息
