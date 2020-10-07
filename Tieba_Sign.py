@@ -5,7 +5,7 @@ from time import sleep
 import os
 from random import randint
 
-print("DD")
+print("开始....")
 print(os.environ)
 try:    
     key = os.environ["sckey"]
